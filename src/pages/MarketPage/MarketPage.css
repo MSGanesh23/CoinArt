@@ -1,0 +1,280 @@
+.action-btns {
+    display: flex;
+    gap: 6px;
+}
+
+.btn-trade {
+    padding: 5px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.btn-buy {
+    background: rgba(0, 212, 170, 0.15);
+    color: var(--accent-green);
+    border: 1px solid rgba(0, 212, 170, 0.3);
+}
+
+.btn-buy:hover {
+    background: var(--accent-green);
+    color: #000;
+}
+
+.btn-sell {
+    background: rgba(255, 77, 109, 0.12);
+    color: var(--accent-red);
+    border: 1px solid rgba(255, 77, 109, 0.25);
+}
+
+.btn-sell:hover {
+    background: var(--accent-red);
+    color: #fff;
+}
+
+.font-mono {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 20px;
+}
+
+.modal {
+    background: var(--bg-card);
+    border: 1px solid var(--border-hover);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 420px;
+    box-shadow: var(--shadow), 0 0 60px rgba(0, 0, 0, 0.5);
+    animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-header h2 {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+}
+
+.modal-close:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.order-info strong {
+    color: var(--text-primary);
+}
+
+.order-total {
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.success-banner {
+    background: rgba(0, 212, 170, 0.1);
+    border: 1px solid rgba(0, 212, 170, 0.3);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    color: var(--accent-green);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+/* ── Market header right side ─────────────────────────────── */
+.market-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.balance-chip {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    padding: 6px 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.balance-chip strong {
+    color: var(--text-primary);
+}
+
+/* ── WebSocket live status badge ───────────────────────────── */
+.ws-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.ws-live {
+    background: rgba(0, 212, 170, 0.1);
+    border-color: rgba(0, 212, 170, 0.3);
+    color: var(--accent-green);
+}
+
+.ws-poll {
+    background: rgba(255, 180, 0, 0.1);
+    border-color: rgba(255, 180, 0, 0.3);
+    color: #ffb400;
+}
+
+.ws-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse-dot 1.4s ease-in-out infinite;
+}
+
+.ws-time {
+    font-weight: 400;
+    opacity: 0.7;
+    margin-left: 4px;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+/* ── Filter tabs ───────────────────────────────────────────── */
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.filter-tab {
+    padding: 8px 18px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.filter-tab:hover {
+    border-color: var(--border-hover);
+    color: var(--text-primary);
+}
+
+.filter-tab.active {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    color: #fff;
+}
+
+/* ── Price flash animation ─────────────────────────────────── */
+@keyframes flash-up-anim {
+    0% {
+        background: rgba(0, 212, 170, 0.25);
+    }
+
+    100% {
+        background: transparent;
+    }
+}
+
+@keyframes flash-down-anim {
+    0% {
+        background: rgba(255, 77, 109, 0.2);
+    }
+
+    100% {
+        background: transparent;
+    }
+}
+
+tr.flash-up {
+    animation: flash-up-anim 0.8s ease-out;
+}
+
+tr.flash-down {
+    animation: flash-down-anim 0.8s ease-out;
+}
+
+.price-cell.flash-up {
+    color: var(--accent-green) !important;
+}
+
+.price-cell.flash-down {
+    color: var(--accent-red) !important;
+}
